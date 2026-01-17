@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h1>R$udoku</h1>
+<form method="get">
+    <select name="difficulty">
+        <option value="easy" {{ "selected" if difficulty=="easy" else "" }}>Easy</option>
+        <option value="medium" {{ "selected" if difficulty=="medium" else "" }}>Medium</option>
+        <option value="hard" {{ "selected" if difficulty=="hard" else "" }}>Hard</option>
+    </select>
+    <button type="submit">New Game</button>
+</form>
+
+<p id="timer">Time: 0s</p>
+<p id="hints">Hints left: 5</p>
+
+
+<div id="board" data-start-board='{{ board | tojson }}'></div>
+
+<div class="controls">
+    <button onclick="checkBoard()">Check</button>
+    <button onclick="getHint()">Hint</button>
+</div>
+
+<script>
+    const START_BOARD = JSON.parse(document.getElementById('board').getAttribute('data-start-board'));
+</script>
+<script src="/static/script.js"></script>
+</body>
+</html>

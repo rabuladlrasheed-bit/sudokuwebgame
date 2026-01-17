@@ -1,0 +1,89 @@
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background: #7a7979;
+    margin: 0;
+    
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(9, 44px);
+    justify-content: center;
+    margin: 20px auto;
+    
+}
+
+/* Base cell styling */
+.cell {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    outline: none;
+    background: white;
+}
+
+/* Thin grid lines */
+.cell {
+    border: 1px solid #bbb;
+}
+
+
+
+
+.cell:disabled {
+    background: #e9ecef;
+    color: black;
+    font-weight: bold;
+}
+
+/* Focused cell */
+.cell:focus {
+    background: #e3f2fd;
+}
+
+/* Buttons */
+button {
+    font-size: 14px;
+    padding: 8px 14px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+/* Info text */
+#timer,
+#hints {
+    font-size: 14px;
+    margin: 5px 0;
+}
+@media (max-width: 480px) {
+    :root {
+        --cell-size: 36px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    #timer,
+    #hints {
+        font-size: 12px;
+    }
+
+    .app-container {
+        padding: 10px 6px;
+    }
+}
+
